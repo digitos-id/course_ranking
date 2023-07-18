@@ -4,7 +4,7 @@ defined('MOODLE_INTERNAL') || die();
 
 define ('DEFAULT_POINTS', 2);
 
-function generate_table_ranking($data) {
+function generate_table_ranking($data, $course) {
 
     if (empty($data)) {
         return "No students to show";
@@ -26,7 +26,8 @@ function generate_table_ranking($data) {
         $table->data[] = $row;
     }
 
-    return html_writer::table($table);
+    return '<div><h4>Ranking ' . $course->fullname . '</h4></div>' . html_writer::table($table);
+    // return html_writer::table($table);
     // return "ok";
 
 }
