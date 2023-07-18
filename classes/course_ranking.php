@@ -15,6 +15,8 @@ class course_ranking {
     public static function courseranking() {
         global $DB;
         $courseid = get_config('local_course_ranking', 'courserangking');
+        $course = $DB->get_record('course', array('id' => $courseid), '*', MUST_EXIST);
+        // var_dump($course); exit();
 
         $sql = "SELECT u.firstname , u.lastname , u.email 
             , cc.name CourseName,
@@ -64,7 +66,7 @@ class course_ranking {
     </div>';
 
         
-        return generate_table_ranking($data);
+        return generate_table_ranking($data, $course);
         // return "OK";
     }
 }
