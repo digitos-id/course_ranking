@@ -26,8 +26,8 @@ function generate_table_ranking($data, $course) {
         $table->data[] = $row;
     }
 
-    return '<div><h4>Ranking ' . $course->fullname . '</h4></div>' . html_writer::table($table);
-    // return html_writer::table($table);
+    // return '<div><h4>Ranking ' . $course->fullname . '</h4></div>' . html_writer::table($table);
+    return html_writer::table($table);
     // return "ok";
 
 }

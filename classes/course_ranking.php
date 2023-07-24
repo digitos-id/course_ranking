@@ -37,4 +37,13 @@ class course_ranking {
         
         return generate_table_ranking($data, $course);
     }
+
+    public  static function coursename()
+    {
+        global $DB;
+        $courseid = get_config('local_course_ranking', 'courserangking');
+        $course = $DB->get_record('course', array('id' => $courseid), '*', MUST_EXIST);
+
+        return $course->fullname;
+    }
 }
