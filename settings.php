@@ -34,4 +34,7 @@ if ($hassiteconfig) {
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $settings->add($setting);
 
+    $settings->add(new admin_setting_configtext('local_course_ranking/rankingsize', get_string('rankingsize', 'local_course_ranking'),
+        get_string('rankingsize_help', 'local_course_ranking'), 10, PARAM_INT));
+
 }
