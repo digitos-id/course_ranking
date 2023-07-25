@@ -1,0 +1,8 @@
+.local_courseranking .rankingTable tr.itsme {
+    border: 2px solid #ca410b;
+}
+
+.local_courseranking .generaltable {
+    color: #318ebb;
+}
+

@@ -19,7 +19,7 @@ class course_ranking {
 
         $rangkingzize = get_config('local_course_ranking', 'rankingsize');
 
-        $sql = "SELECT u.firstname , u.lastname , u.email 
+        $sql = "SELECT u.id, u.firstname , u.lastname , u.email 
             , cc.name CourseName,
             ROUND(gg.finalgrade,2) Grade,
             FROM_UNIXTIME(gi.timemodified) TimeModified
@@ -34,7 +34,7 @@ class course_ranking {
             AND c.id = :courseid
             order by Grade desc
             LIMIT " . $rangkingzize;
-            
+
         $params['courseid'] = $courseid;
         $data = array_values($DB->get_records_sql($sql, $params));
         
